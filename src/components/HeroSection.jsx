@@ -1,6 +1,6 @@
 import heroImg from '../images/heroImg.jpg';
 
-export default function Example() {
+export default function HeroSection() {
   return (
     <main className="bg-main-gray">
       <div className=" flex max-w-7xl mx-auto px-4 sm:px-6 bg-main-gray">
