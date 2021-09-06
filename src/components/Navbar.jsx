@@ -11,7 +11,7 @@ const navigation = [
 
 export default function Navbar() {
   return (
-    <Popover as="header" className="relative">
+    <Popover as="header" className="relative bg-main-gray">
       <div className="py-6">
         <nav className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
           <div className="flex items-center flex-1">
