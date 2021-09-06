@@ -22,7 +22,7 @@ export default function Example() {
           </div>
         </div>
 
-        <img className="h-full object-cover" src={heroImg} alt="People working on laptops" />
+        <img className="h-full object-cover" src={heroImg} alt="Man singing" />
       </div>
     </main>
   );
