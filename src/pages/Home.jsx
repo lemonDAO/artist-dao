@@ -1,4 +1,5 @@
-import Navbar from '../components/Navbar.jsx'
+import Navbar from '../components/Navbar.jsx';
+import HeroSection from '../components/HeroSection.jsx'
 
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="bg-white">
       <div className="relative overflow-hidden">
        <Navbar/>
+       <HeroSection/>
       </div>
     </div>
   )
