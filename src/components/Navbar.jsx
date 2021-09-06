@@ -1,7 +1,20 @@
+import { wallet, CONTRACT_ID } from "../services";
+
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import logo from "../images/logo.png"
+
+const accountId = wallet.getAccountId();
+
+const signIn = () => {
+  if (accountId) {
+    wallet.signOut();
+    window.location.reload();
+  } else {
+    wallet.requestSignIn(CONTRACT_ID);
+  }
+};
 
 const navigation = [
   { name: 'About', href: '#' },
@@ -36,9 +49,10 @@ export default function Navbar() {
             </div>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-6">
-            <a href="#" className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
-              Log in with NEAR
-            </a>
+            <p>{accountId && accountId}</p>
+            <button onClick={signIn} className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
+              {accountId ? "Log Out" : "Log in with NEAR"}
+            </button>
           </div>
         </nav>
       </div>
