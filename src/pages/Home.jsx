@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar.jsx';
 import HeroSection from '../components/HeroSection.jsx'
+import Policy from '../components/Policy.jsx';
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <div className="relative overflow-hidden">
        <Navbar/>
        <HeroSection/>
+       <Policy/>
       </div>
     </div>
   )
