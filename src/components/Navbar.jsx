@@ -74,22 +74,22 @@ export default function Navbar() {
             <div className="pt-5 pb-6">
               <div className="px-2 space-y-1">
                 {navigation.map(item => (
-                  <a key={item.name} href={item.href} className="block px-3 py-2 rounded-md text-base font-medium text-black hover:bg-gray-50">
+                  <Link key={item.name} to={item.href} className="block px-3 py-2 rounded-md text-base font-medium text-black hover:bg-gray-50">
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="mt-6 px-5">
-                <a href="#" className="block text-center w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700">
+                <Link to="/" className="block text-center w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700">
                   Start free trial
-                </a>
+                </Link>
               </div>
               <div className="mt-6 px-5">
                 <p className="text-center text-base font-medium text-gray-500">
                   Existing customer?{' '}
-                  <a href="#" className="text-gray-900 hover:underline">
+                  <Link to="/" className="text-gray-900 hover:underline">
                     Login
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
