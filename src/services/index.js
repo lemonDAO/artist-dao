@@ -31,9 +31,11 @@ export const getPolicy = async (daoId) => {
   return await Promise.all(
     result.map(async daoId => {
       const policy = await wallet.account().viewFunction(daoId, "get_policy", {})
+      const config = await wallet.account().viewFunction(daoId, "get_config", {})
       return {
         daoId,
-        policy
+        policy,
+        config
       };
     })
   )
