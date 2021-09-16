@@ -1,6 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useRef, useState } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { useState } from 'react';
 import { addBounty } from '../services';
 
 export default function AddBountyForm() {
@@ -18,8 +17,6 @@ export default function AddBountyForm() {
   const handleSubmit = (e, bountyForm) => {
     e.preventDefault();
     const POLICY_ID = localStorage.getItem('daoId')
-    // console.log()
-    // console.log({ POLICY_ID, ...bountyForm });
     addBounty({ POLICY_ID, ...bountyForm });
   };
 
@@ -27,7 +24,7 @@ export default function AddBountyForm() {
  
     <div className="flex items-center justify-center my-20">
     <form>
-      <label for="description" className="mx-2">General description</label>
+      <label htmlFor="description" className="mx-2">General description</label>
       <input
         value={bountyForm.description}
         onChange={e => handleChange(e)} 
@@ -39,7 +36,7 @@ export default function AddBountyForm() {
         className="border rounded p-1 px-3 w-40 h-11"
       />
 
-      <label for="bountyDescription" className="mx-2">Bounty description</label>
+      <label htmlFor="bountyDescription" className="mx-2">Bounty description</label>
       <input
        value={bountyForm.bountyDescription}
        onChange={e => handleChange(e)} 
@@ -49,7 +46,7 @@ export default function AddBountyForm() {
         placeholder="Bounty Description"
         className="border rounded p-1 px-3 w-40 h-11"
       />
-      <label for="amount" className="mx-2">Amount</label>
+      <label htmlFor="amount" className="mx-2">Amount</label>
       <input
          value={bountyForm.amount}
          onChange={e => handleChange(e)} 
@@ -59,7 +56,7 @@ export default function AddBountyForm() {
         placeholder="Amount"
         className="border rounded p-1 px-3 w-40 h-11"
       />
-      <label for="times" className="mx-2">Times</label>
+      <label htmlFor="times" className="mx-2">Times</label>
       <input
         value={bountyForm.times}
         onChange={e => handleChange(e)} 
@@ -69,7 +66,7 @@ export default function AddBountyForm() {
         placeholder="Times"
         className="border rounded p-1 px-3 w-40 h-11"
       />
-      <label for="maxDeadline" className="mx-2">Max Deadline</label>
+      <label htmlFor="maxDeadline" className="mx-2">Max Deadline</label>
       <input
         value={bountyForm.maxDeadline}
         onChange={e => handleChange(e)} 
