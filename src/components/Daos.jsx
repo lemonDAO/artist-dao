@@ -7,7 +7,6 @@ export default function Daos() {
 
   const getAllDaos = async () => {
     const result = await getDaos();
-    console.log(result);
     await setDaos(result);
   };
 
