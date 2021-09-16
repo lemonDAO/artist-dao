@@ -105,7 +105,6 @@ export const addBounty = ({
   times,
   maxDeadline,
 }) => {
-  console.log(POLICY_ID)
   return wallet.account().functionCall({
     contractId: POLICY_ID,
     methodName: "add_proposal",
