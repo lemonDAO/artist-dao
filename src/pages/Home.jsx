@@ -1,5 +1,5 @@
 import HeroSection from '../components/HeroSection.jsx'
-import Policy from '../components/Daos.jsx';
+import Daos from '../components/Daos.jsx';
 import LogoClouds from "../components/LogoClouds.jsx"
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
       <div className="relative overflow-hidden">
        <HeroSection/>
        <LogoClouds/>
-       <Policy/>
+       <Daos/>
       </div>
     </div>
   );
