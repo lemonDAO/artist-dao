@@ -17,7 +17,6 @@ export default function AddDaoForm({ open, setOpen }) {
 
   const handleSubmit = (e, daoForm) => {
     e.preventDefault();
-    console.log({ ...daoForm });
     addDao({ ...daoForm });
   };
 
