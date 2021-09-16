@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { getPolicy } from '../services';
+import { getDaos } from '../services';
 import SingleDAO from './SingleDAO';
 
-
-export default function Policy() {
+export default function Daos() {
   const [daos, setDaos] = useState();
 
-
-
-
-  const getDaos = async () => {
-    const result = await getPolicy();
+  const getAllDaos = async () => {
+    const result = await getDaos();
+    console.log(result);
     await setDaos(result);
   };
 
   useEffect(() => {
-    getDaos();
+    getAllDaos();
   }, []);
 
   return (
@@ -29,11 +26,17 @@ export default function Policy() {
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Explore DAOs</h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Fund artists and contribute to the public good</p>
           </div>
+
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-            {daos &&
-              daos.map(dao => {
-                return <SingleDAO dao={dao} />;
-              })}
+            {daos ? (
+              daos.map((dao,index) => {
+                return <SingleDAO dao={dao} index={index} key={index}/>;
+              })
+            ) : (
+              <div className="flex justify-center items-center col-start-1 col-end-4">
+                <div className="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 text-center"></div>
+             </div>
+            )}
           </div>
         </div>
       </div>
