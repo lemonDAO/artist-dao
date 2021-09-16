@@ -26,7 +26,7 @@ export const getDaoList = () => {
 }
 
 // a service to get policies from the blockchain
-export const getPolicy = async (daoId) => {
+export const getDaos = async (daoId) => {
   const result = await getDaoList()
   return await Promise.all(
     result.map(async daoId => {
@@ -67,22 +67,65 @@ export const addDao = ({daoName, purpose, council}) => {
 };
 
 
+export const getPolicy = async (POLICY_ID) => {
+  const policy = await wallet.account().viewFunction(POLICY_ID, "get_policy", {})
+  const config = await wallet.account().viewFunction(POLICY_ID, "get_config", {})
+  return {
+    policy,
+    config
+  }
+};
+
+
 // a service to get a proposal from the blockchain
-export const getProposal = () => {
-  return wallet.account().viewFunction(CONTRACT_ID, "get_proposal", {
+export const getProposal = (POLICY_ID) => {
+  return wallet.account().viewFunction(POLICY_ID, "get_proposal", {
     id: 0,
   });
 };
 
-
-export const getLastProposalId = () => {
-  return wallet.account().viewFunction(CONTRACT_ID, "get_last_proposal_id", {});
+export const getLastProposalId = (POLICY_ID) => {
+  return wallet.account().viewFunction(POLICY_ID, "get_last_proposal_id", {});
 };
 
-export const getProposals = async () => {
-  const lastId = await getLastProposalId();
-  return wallet.account().viewFunction(CONTRACT_ID, "get_proposals", {
+export const getProposals = async (POLICY_ID) => {
+  const lastId = await getLastProposalId(POLICY_ID);
+  return wallet.account().viewFunction(POLICY_ID, "get_proposals", {
     from_index: 0,
     limit: lastId,
+  });
+};
+
+// a service to add a Bounty from the blockchain but this is not working for now
+export const addBounty = ({
+  POLICY_ID,
+  description,
+  bountyDescription,
+  amount,
+  times,
+  maxDeadline,
+}) => {
+  console.log(POLICY_ID)
+  return wallet.account().functionCall({
+    contractId: POLICY_ID,
+    methodName: "add_proposal",
+    gas,
+    args: {
+      proposal: {
+        description: description,
+        kind: {
+          AddBounty: {
+            bounty: {
+              description: bountyDescription,
+              token: "",
+              amount: amount,
+              times: times,
+              max_deadline: maxDeadline,
+            },
+          },
+        },
+      },
+    },
+    attachedDeposit: utils.format.parseNearAmount("1"),
   });
 };
