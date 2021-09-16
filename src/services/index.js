@@ -49,7 +49,7 @@ export const addDao = ({daoName, purpose, council}) => {
       purpose: purpose,
       metadata: "",
     },
-    policy: [council]
+    policy: council.split(",")
   }
 
   const args = Buffer.from(JSON.stringify(argsList)).toString('base64');
