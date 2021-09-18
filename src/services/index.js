@@ -8,7 +8,7 @@ import BN from "bn.js";
 
 const gas = new BN("150000000000000");
 
-export const CONTRACT_ID = "five.testnet";
+export const CONTRACT_ID = "lemondao.testnet";
 
 // use new NEAR here to avoid needing async/await
 export const near = new Near({
@@ -19,7 +19,7 @@ export const near = new Near({
 });
 
 // can now create a new WalletConnection with the created Near object
-export const wallet = new WalletConnection(near, "five");
+export const wallet = new WalletConnection(near, "lemondao");
 
 export const getDaoList = () => {
   return wallet.account().viewFunction(CONTRACT_ID, "get_dao_list", {});
