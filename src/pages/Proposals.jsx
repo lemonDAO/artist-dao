@@ -33,10 +33,10 @@ export default function Proposals() {
           {policy && (
             <div className="mt-12  flex  w-9/12 flex-col mx-auto">
               <div className="flex justify-between rounded-lg border border-dark-gray p-4">
-                <p className="text-xl tracking-tight ">
+                <p className="text-xl tracking-tight mr-4">
                   DAO ID: <span className="font-semibold">{localStorage.getItem('daoId')}</span>
                 </p>
-                <p className="text-xl">
+                <p className="text-xl mr-4">
                   Dao Name: <span className="font-semibold">{policy.config.name}</span>
                 </p>
                 <p className=" text-xl">
