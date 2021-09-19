@@ -4,7 +4,7 @@ In addition, the lemonDAO community acts as a curator community. artistDAOs issu
 
 ## lemonDAO Plattform
 
-Preview: https://deploy-preview-4--lemondao.netlify.app/
+Preview: https://deploy-preview-5--lemondao.netlify.app/
 
 This is still early alpha. You can create an artistDAO and propose. Posting the created artifacts and claiming the reward is not supported yet.
 
