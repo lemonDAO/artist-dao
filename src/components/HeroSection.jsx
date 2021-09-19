@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import AddDaoForm from './AddDaoForm';
 
 export default function HeroSection() {
@@ -20,7 +21,7 @@ export default function HeroSection() {
             <span className="block text-white">Fund your favorite</span>
             <span className="block text-indigo-200">Artist today</span>
           </h1>
-          <p className="mt-6 max-w-lg mx-auto text-left text-xl sm:max-w-3xl">Artist can create a DAO and showcase their work.<br/> You can help out by proposing bounties and supporting Art Creators.</p>
+          <p className="mt-6 max-w-lg mx-auto text-left text-xl sm:max-w-3xl">Artists. Grow your audience, earn NEAR and showcase your work.<br/> Fans. Propose a creative challenge and support your favorite artists.</p>
           <div className="mt-10 max-w-sm sm:max-w-none sm:flex sm:justify-start">
             <button onClick={() => setOpen(true)} className="flex items-start mb-2 lg:mb-0 justify-start px-4 mr-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8">
               Create your DAO

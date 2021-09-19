@@ -1,9 +1,10 @@
-import { wallet, CONTRACT_ID } from '../services';
-import { Link } from 'react-router-dom';
-import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+
 import logo from '../images/logo.png';
+import { CONTRACT_ID, wallet } from '../services';
 
 const accountId = wallet.getAccountId();
 
@@ -17,8 +18,6 @@ const signIn = () => {
 };
 
 const navigation = [
-  { name: 'About', href: '/about' },
-  { name: 'Team', href: '/team' },
   { name: 'Contact', href: '/contact-us' }
 ];
 
